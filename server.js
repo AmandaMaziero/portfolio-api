@@ -1,5 +1,4 @@
 const express = require("express")
-const router = express.Router()
 const cors = require("cors")
 const nodemailer = require("nodemailer")
 const morgan = require("morgan")
@@ -32,7 +31,7 @@ contactEmail.verify((error) => {
     }
 })
 
-router.post("/contact", (request, response) => {
+app.post("/contact", (request, response) => {
     const name = request.body.firstName + request.body.lastName
     const { email, message, phone } = request.body
 
